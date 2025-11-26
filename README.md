@@ -1,6 +1,6 @@
 # DSA210-Team-Profile-Market-Analysis
 # Motivation
-My motivation for this project is to test "Efficient Market Hypothesis" which states that all publicly available information is already fully and accurately reflected in the betting odds, making it impossible to systematically "beat the market. This project aims to explore whether a machine learning model, which considers underlying factors like playing styles that go beyond traditional statistics, systematically identify valuable opportunities that the market has missed. This project combines my interest in football with market analysis to apply data science methodologies to a practical, real world problem.
+My motivation for this project is to test "Efficient Market Hypothesis" which states that all publicly available information is already fully and accurately reflected in the betting odds, making it impossible to systematically "beat" the market. This project aims to explore whether a machine learning model, which considers underlying factors like playing styles that go beyond traditional statistics, systematically identify valuable opportunities that the market has missed. This project combines my interest in football with market analysis to apply data science methodologies to a practical, real world problem.
 # Data Source
 The project will make use of publicly available datasets:  
 
