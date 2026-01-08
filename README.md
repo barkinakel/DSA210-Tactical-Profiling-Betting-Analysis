@@ -78,7 +78,7 @@ Ensure the `premier_league_metrics.csv` and `PL_metrics_plus_odds.csv` files are
 ### Limitations & Future Work
 *   **Game State Bias**: The current model uses aggregate match stats and does not account for game state (e.g., a team stopping attacks after leading 3-0).
 *   **Data Quality**: Detailed tactical data is less reliable for lower-tier leagues, limiting immediate expansion.
-*   **Future Expansion**: Plans include testing the framework on other major European leagues (La Liga, Bundesliga) and incorporating "Corner Handicap" markets once reliable historical data is sourced.
+*   **Future Expansion**: Plans include testing the framework on other major European leagues (La Liga, Bundesliga etc.) and incorporating "Corner Handicap" markets once reliable historical data is sourced.
 *   **Market Diversification**: Expanding the model to cover not just Corner markets, but also general markets such as **Over/Under** (e.g., Total Goals) and to broaden the strategy's scope.
 
   ### Academic Integrity
