@@ -1,27 +1,57 @@
-# DSA210-Team-Profile-Market-Analysis
-# Motivation
-My motivation for this project is to test "Efficient Market Hypothesis" which states that all publicly available information is already fully and accurately reflected in the betting odds, making it impossible to systematically "beat" the market. This project aims to explore whether a machine learning model, which considers underlying factors like playing styles that go beyond traditional statistics, systematically identify valuable opportunities that the market has missed. This project combines my interest in football with market analysis to apply data science methodologies to a practical, real world problem.
-# Data Source
-The project will make use of publicly available datasets:  
+# Advanced Tactical Analysis & Betting Strategy
+## DSA 210 Term Project - Fall 2025-2026
 
-- **football-data.co.uk** - Contains detailed match-level statistics (shots, corners, cards, etc.) for past seasons in major European leagues.  
-- **FBref.com** - Provides detailed match and team statistics such as expected goals (xG), possession, and pressing metrics.  
-- **oddsPortal.com** - Contains historical bookmaker odds across multiple markets, allowing comparison between model's and market-implied odds to identify potential value bets.
+### Motivation
+The primary motivation for this project is to test the **Efficient Market Hypothesis (EMH)** in the context of sports betting. EMH suggests that all publicly available information is already reflected in betting odds, making it impossible to systematically "beat" the market. 
 
-# Data Collection
-The dataset used in this project (`fbref_data.csv`) is a comprehensive compilation of match statistics from the **English Premier League** over the last 5 seasons (2019-2024).
+This project challenges that notion by exploring whether a machine learning model—one that incorporates **tactical profiling** rather than just traditional win/loss records—can identify structural inefficiencies and valuable opportunities that the market has missed. It combines sports analytics with financial modeling to apply rigorous data science methodologies to a real-world problem.
 
-### Collection Strategy
-To overcome API rate limits and gather deep tactical metrics, a custom Python script was developed to:
-1.  Aggregate data from multiple statistical tables:
-    * **Standard Stats:** Goals, xG, xGA, Possession.
-    * **Shooting:** Shot distance, Shots on Target.
-    * **Passing Types:** Corners, Crosses, Switch plays.
-    * **Defense:** Tackles, Pressing, Clearances.
-    * **Miscellaneous:** Aerial duels, Fouls, Cards.
-2.  **Merge & Clean:** The script merges these disparate tables based on match ID and date, creating a unified dataset with over 150+ tactical features per match. Which will be narrowed down to statistics merely used for this project.
+### Data Sources
+The project utilizes data from the following sources:
+*   **FBref.com**: Used for detailed match and team statistics, including Expected Goals (xG), Possession, Touches in Attacking Penalty Area, and Defensive Actions.
+*   **TotalCorner.com**: Used for historical corner kick odds to enable backtesting and value identification.
 
-The raw data collection script can be found in the scripts/ folder.
+### Methodology
 
-# Data Analysis
-I plan to analyze seasonal team statistics and group teams that have similar statistical profiles. Next, I will train a model based on these profiles to predict match outcomes. Finally, I will compare the model's predictions against the market's odds and conduct a backtesting process to see if a profitable strategy exists.
+The project follows a structured data science pipeline:
+
+1.  **Data Collection & Preprocessing**:
+    *   Aggregated match statistics from the English Premier League (2019-2024).
+    *   Merged tactical metrics with historical betting odds.
+    *   Performed cleaning and feature engineering (e.g., creating the "Box Siege" metric).
+
+2.  **Exploratory Data Analysis (EDA)**:
+    *   Conducted Paired T-Tests to quantify Home vs. Away performance bias.
+    *   Validated the correlation between specific tactical metrics (like Box Touches) and Corner Kicks.
+
+3.  **Tactical Profiling (Unsupervised Learning)**:
+    *   Applied **K-Means Clustering** to categorize teams into distinct playing styles (e.g., *Elite Dominant*, *High Pressing*, *Deep Block*).
+    *   Used Silhouette Analysis to determine the optimal number of clusters (K=6).
+
+4.  **Predictive Modeling**:
+    *   Developed a weighted 3-component prediction model combining:
+        *   **Tactical Matchup History** (80% weight)
+        *   **Season Averages** (15% weight)
+        *   **Recent Form** (5% weight)
+    *   Optimized weights using Grid Search to minimize Brier Score and MAE.
+
+5.  **Betting Strategy & Optimization**:
+    *   **Probabilistic Modeling**: Used the **Poisson Distribution** to calculate the "Fair Probability" of corner outcomes based on predicted totals.
+    *   **Risk Management**: Introduced a **Safety Score** metric (Z-Score based) to filter bets where the edge exceeds historical variance.
+    *   **Staking Strategy**: Simulated a staking plan to optimize capital allocation (Edge Power, Confidence Threshold, Volatility Penalty).
+
+### Key Findings
+*   **Tactical Correlations**: Specific matchups, such as a "Box Siege" team playing against a "Deep Block" team, produce a statistically significant surplus of corners compared to the league average.
+*   **Market Inefficiency**: The model identified that bookmakers often underprice these specific tactical mismatches, creating a "Value Bet" opportunity.
+*   **Profitable Thresholds**: Backtesting revealed that a **Safety Score > 0.22** for "Over" bets yielded a profitable win rate (>52.7%) with a robust sample size.
+
+### Limitations & Future Work
+*   **Game State Bias**: The current model uses aggregate match stats and does not account for game state (e.g., a team stopping attacks after leading 3-0).
+*   **Data Quality**: Detailed tactical data is less reliable for lower-tier leagues, limiting immediate expansion.
+*   **Future Expansion**: Plans include testing the framework on other major European leagues (La Liga, Bundesliga) and incorporating "Corner Handicap" markets once reliable historical data is sourced.
+*   **Market Diversification**: Expanding the model to cover not just Corner markets, but also general markets such as **Over/Under** (e.g., Total Goals) and to broaden the strategy's scope.
+
+  ### Academic Integrity
+This project is submitted as part of the DSA 210 course requirements.
+*   **AI Usage**: Generative AI tools were utilized extensively throughout the entire development process. This includes assistance with writing data scraping scripts, implementing complex feature engineering logic, debugging code, optimizing model parameters, and drafting technical documentation. AI acted as a co-pilot to accelerate the implementation of the project pipeline.
+*   **Citations**: Data sources (FBref, TotalCorner) and external libraries are properly credited.
