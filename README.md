@@ -61,11 +61,11 @@ The project follows a structured data science pipeline:
     ```bash
     pip install -r requirements.txt
     ``
- Ensure the `premier_league_metrics.csv` file is located in the `data/` directory.
+ Ensure the `premier_league_metrics.csv` file is located in the `Data/` directory.
 
 4.  **Run the Analysis**:
     *   Open `Tactical_analysis_and_strategy.ipynb` in Jupyter Notebook or VS Code.
-    *   Run all cells to reproduce the analysis, modeling, and simulation results.
+
 ### Limitations & Future Work
 *   **Game State Bias**: The current model uses aggregate match stats and does not account for game state (e.g., a team stopping attacks after leading 3-0).
 *   **Data Quality**: Detailed tactical data is less reliable for lower-tier leagues, limiting immediate expansion.
