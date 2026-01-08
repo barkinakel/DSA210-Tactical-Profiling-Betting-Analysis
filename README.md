@@ -8,8 +8,8 @@ This project challenges that notion by exploring whether a machine learning mode
 
 ### Data Sources
 The project utilizes data from the following sources:
-*   **FBref.com**: Used for detailed match and team statistics, including Expected Goals (xG), Possession, Touches in Attacking Penalty Area, and Defensive Actions.
-*   **TotalCorner.com**: Used for historical corner kick odds to enable backtesting and value identification.
+*   **[FBref.com](https://fbref.com/en/)**: Used for detailed match and team statistics, including Expected Goals (xG), Possession, Touches in Attacking Penalty Area, and Defensive Actions.
+*   **[TotalCorner.com](https://www.totalcorner.com/)**: Used for historical corner kick odds to enable backtesting and value identification.
 
 ### Project Scope
 While the initial research considered multiple leagues and betting markets, this project specifically narrows its focus to the **English Premier League** and the **Corner Kick Market**.
@@ -50,6 +50,15 @@ The project follows a structured pipeline:
 *   **Market Inefficiency**: The model identified that bookmakers often underprice these specific tactical mismatches, creating a "Value Bet" opportunity.
 *   **Profitable Thresholds**: Backtesting revealed that a **Safety Score > 0.22** for "Over" bets yielded a profitable win rate (>52.7%) with a robust sample size. Similarly, a **Safety Score > 0.11** for "Under" bets achieved a **55.3% Win Rate** across 338 matches.
 
+### Files in the Repository
+
+| File/Folder | Description |
+| :--- | :--- |
+| `Tactical_analysis_and_strategy.ipynb` | The main notebook containing the entire pipeline: Data Collection, EDA, Clustering, Modeling, and Strategy Optimization. |
+| `data/` | Directory containing the datasets (`premier_league_metrics.csv`, `PL_metrics_plus_odds.csv`). |
+| `requirements.txt` | List of Python dependencies required to run the analysis. |
+| `README.md` | Project documentation, methodology, and findings. |
+
 ### Installation & Usage
 
 1.  **Clone the Repository**:
@@ -61,7 +70,7 @@ The project follows a structured pipeline:
     ```bash
     pip install -r requirements.txt
     ``
- Ensure the `premier_league_metrics.csv` file is located in the `Data/` directory.
+Ensure the `premier_league_metrics.csv` and `PL_metrics_plus_odds.csv` files are located in the `Data/` directory.
 
 4.  **Run the Analysis**:
     *   Open `Tactical_analysis_and_strategy.ipynb` in Jupyter Notebook or VS Code.
