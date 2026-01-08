@@ -4,8 +4,7 @@
 ### Motivation
 The primary motivation for this project is to test the **Efficient Market Hypothesis (EMH)** in the context of sports betting. EMH suggests that all publicly available information is already reflected in betting odds, making it impossible to systematically "beat" the market. 
 
-This project challenges that notion by exploring whether a machine learning model—one that incorporates **tactical profiling** rather than just traditional win/loss records—can identify structural inefficiencies and valuable opportunities that the market has missed. It combines sports analytics with financial modeling to apply rigorous data science methodologies to a real-world problem.
-
+This project challenges this by exploring whether a machine learning model that incorporates **tactical profiling** rather than just traditional win/loss records can find "value bets" which represents the situations where the model's calculated probability differs from the bookmaker's implied odds.
 ### Data Sources
 The project utilizes data from the following sources:
 *   **[FBref.com](https://fbref.com/en/)**: Used for detailed match and team statistics, including Expected Goals (xG), Possession, Touches in Attacking Penalty Area, and Defensive Actions.
@@ -13,17 +12,18 @@ The project utilizes data from the following sources:
 
 ### Project Scope
 While the initial research considered multiple leagues and betting markets, this project specifically narrows its focus to the **English Premier League** and the **Corner Kick Market**.
-*   **Why Premier League?** It offers the highest availability of tactical data (e.g., "Touches in Attacking Third") required for deep profiling.
-*   **Why Corner Market?** Unlike the highly efficient 1X2 (Win/Loss) market, the corner market is often less optimized by bookmakers, creating more opportunities for a specialized statistical model to find an edge.
+*   **Why Premier League?** It has the most reliable advanced metrics (e.g., "Touches in Attacking Third") needed to define tactical styles.
+*   **Why Corner Market?** Unlike the popular Match Result (1X2) market, the corner market receives less attention from oddsmakers, creating more opportunities to find pricing errors using statistical models.
 
 ### Methodology
 
 The project follows a structured pipeline:
 
 1.  **Data Collection & Preprocessing**:
-    *   Aggregated match statistics from the English Premier League (2019-2024).
+    *   Scraped match statistics from the English Premier League (2019-2024).
+    *   Scraped betting odds.
     *   Merged tactical metrics with historical betting odds.
-    *   Performed cleaning and feature engineering (e.g., creating the "Box Siege" metric).
+    *   Cleaned data and engineered features.
 
 2.  **Exploratory Data Analysis (EDA)**:
     *   Conducted Paired T-Tests to quantify Home vs. Away performance bias.
@@ -82,5 +82,5 @@ Ensure the `premier_league_metrics.csv` and `PL_metrics_plus_odds.csv` files are
 *   **Market Diversification**: Expanding the model to cover not just Corner markets, but also general markets such as **Over/Under** (e.g., Total Goals) and to broaden the strategy's scope.
 
   ### Academic Integrity
-*   **AI Usage**: Generative AI tools were utilized extensively throughout the entire development process. This includes assistance with writing data scraping scripts, implementing complex logic, debugging code, optimizing model parameters, formatting. AI acted as a co-pilot to accelerate the implementation of the project. While AI accelerated the coding process, conceptual frameworks, the core ideas and the analytical decisions are entirely my own
+*   **AI Usage**: Generative AI tools were utilized extensively throughout the entire development process. This includes assistance with writing data scraping scripts, implementing complex logic, debugging code, optimizing model parameters, formatting. While AI accelerated the coding process, conceptual frameworks, the core ideas and the analytical decisions are entirely my own.
 *   **Citations**: Data sources (FBref, TotalCorner) and external libraries are properly credited.
