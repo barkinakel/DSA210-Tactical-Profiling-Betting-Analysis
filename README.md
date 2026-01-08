@@ -82,5 +82,5 @@ Ensure the `premier_league_metrics.csv` and `PL_metrics_plus_odds.csv` files are
 *   **Market Diversification**: Expanding the model to cover not just Corner markets, but also general markets such as **Over/Under** (e.g., Total Goals) and to broaden the strategy's scope.
 
   ### Academic Integrity
-*   **AI Usage**: Generative AI tools were utilized extensively throughout the entire development process. This includes assistance with writing data scraping scripts, implementing complex feature engineering logic, debugging code, optimizing model parameters. AI acted as a co-pilot to accelerate the implementation of the project pipeline. While AI accelerated the coding process,core ideas and analytical decisions are my own.
+*   **AI Usage**: Generative AI tools were utilized extensively throughout the entire development process. This includes assistance with writing data scraping scripts, implementing complex logic, debugging code, optimizing model parameters, formatting. AI acted as a co-pilot to accelerate the implementation of the project. While AI accelerated the coding process, conceptual frameworks, the core ideas and the analytical decisions are entirely my own
 *   **Citations**: Data sources (FBref, TotalCorner) and external libraries are properly credited.
