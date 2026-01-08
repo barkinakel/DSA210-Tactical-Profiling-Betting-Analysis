@@ -11,6 +11,11 @@ The project utilizes data from the following sources:
 *   **FBref.com**: Used for detailed match and team statistics, including Expected Goals (xG), Possession, Touches in Attacking Penalty Area, and Defensive Actions.
 *   **TotalCorner.com**: Used for historical corner kick odds to enable backtesting and value identification.
 
+### Project Scope
+While the initial research considered multiple leagues and betting markets, this project specifically narrows its focus to the **English Premier League** and the **Corner Kick Market**.
+*   **Why Premier League?** It offers the highest availability of tactical data (e.g., "Touches in Attacking Third") required for deep profiling.
+*   **Why Corner Market?** Unlike the highly efficient 1X2 (Win/Loss) market, the corner market is often less optimized by bookmakers, creating more opportunities for a specialized statistical model to find an edge.
+
 ### Methodology
 
 The project follows a structured data science pipeline:
@@ -45,6 +50,22 @@ The project follows a structured data science pipeline:
 *   **Market Inefficiency**: The model identified that bookmakers often underprice these specific tactical mismatches, creating a "Value Bet" opportunity.
 *   **Profitable Thresholds**: Backtesting revealed that a **Safety Score > 0.22** for "Over" bets yielded a profitable win rate (>52.7%) with a robust sample size.
 
+### Installation & Usage
+
+1.  **Clone the Repository**:
+    ```bash
+    git clone <your-repo-url>
+    cd <your-repo-name>
+    ```
+2.  **Install Dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ``
+ Ensure the `premier_league_metrics.csv` file is located in the `data/` directory.
+
+4.  **Run the Analysis**:
+    *   Open `Tactical_analysis_and_strategy.ipynb` in Jupyter Notebook or VS Code.
+    *   Run all cells to reproduce the analysis, modeling, and simulation results.
 ### Limitations & Future Work
 *   **Game State Bias**: The current model uses aggregate match stats and does not account for game state (e.g., a team stopping attacks after leading 3-0).
 *   **Data Quality**: Detailed tactical data is less reliable for lower-tier leagues, limiting immediate expansion.
