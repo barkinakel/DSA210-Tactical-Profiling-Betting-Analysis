@@ -18,7 +18,7 @@ While the initial research considered multiple leagues and betting markets, this
 
 ### Methodology
 
-The project follows a structured data science pipeline:
+The project follows a structured pipeline:
 
 1.  **Data Collection & Preprocessing**:
     *   Aggregated match statistics from the English Premier League (2019-2024).
@@ -27,10 +27,10 @@ The project follows a structured data science pipeline:
 
 2.  **Exploratory Data Analysis (EDA)**:
     *   Conducted Paired T-Tests to quantify Home vs. Away performance bias.
-    *   Validated the correlation between specific tactical metrics (like Box Touches) and Corner Kicks.
+    *   Validated the correlation between specific tactical metrics like Box Touches and Corner Kicks.
 
 3.  **Tactical Profiling (Unsupervised Learning)**:
-    *   Applied **K-Means Clustering** to categorize teams into distinct playing styles (e.g., *Elite Dominant*, *High Pressing*, *Deep Block*).
+    *   Applied **K-Means Clustering** to categorize teams into distinct playing styles (e.g. *High Pressing*, *Deep Block*).
     *   Used Silhouette Analysis to determine the optimal number of clusters (K=6).
 
 4.  **Predictive Modeling**:
@@ -48,7 +48,7 @@ The project follows a structured data science pipeline:
 ### Key Findings
 *   **Tactical Correlations**: Specific matchups, such as a "Box Siege" team playing against a "Deep Block" team, produce a statistically significant surplus of corners compared to the league average.
 *   **Market Inefficiency**: The model identified that bookmakers often underprice these specific tactical mismatches, creating a "Value Bet" opportunity.
-*   **Profitable Thresholds**: Backtesting revealed that a **Safety Score > 0.22** for "Over" bets yielded a profitable win rate (>52.7%) with a robust sample size.
+*   **Profitable Thresholds**: Backtesting revealed that a **Safety Score > 0.22** for "Over" bets yielded a profitable win rate (>52.7%) with a robust sample size. Similarly, a **Safety Score > 0.11** for "Under" bets achieved a **55.3% Win Rate** across 338 matches.
 
 ### Installation & Usage
 
