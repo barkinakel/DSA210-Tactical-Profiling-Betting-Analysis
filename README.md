@@ -76,10 +76,11 @@ Ensure the `premier_league_metrics.csv` and `PL_metrics_plus_odds.csv` files are
     *   Open `Tactical_analysis_and_strategy.ipynb` in Jupyter Notebook or VS Code.
 
 ### Limitations & Future Work
-*   **Game State Bias**: The current model uses aggregate match stats and does not account for game state (e.g., a team stopping attacks after leading 3-0).
+*   **Game State**: The current model uses aggregate match stats and does not account for game state (e.g., a team stopping attacks after leading 3-0).
 *   **Data Quality**: Detailed tactical data is less reliable for lower-tier leagues, limiting immediate expansion.
 *   **Future Expansion**: Plans include testing the framework on other major European leagues (La Liga, Bundesliga etc.) and incorporating "Corner Handicap" markets once reliable historical data is sourced.
 *   **Market Diversification**: Expanding the model to cover not just Corner markets, but also general markets such as **Over/Under** (e.g., Total Goals) and to broaden the strategy's scope.
+*   **Forward Testing**: While the backtesting results are promising, in order to test how sound the model is, I will deploy the strategy on the ongoing 2025-2026 EPL season data to verify if the simulated ROI holds up.
 
   ### Academic Integrity
 *   **AI Usage**: Generative AI tools were utilized extensively throughout the entire development process. This includes assistance with writing data scraping scripts, implementing complex logic, debugging code, optimizing model parameters, formatting. While AI accelerated the coding process, conceptual frameworks, the core ideas and the analytical decisions are entirely my own.
