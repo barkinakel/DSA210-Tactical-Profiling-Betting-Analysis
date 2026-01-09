@@ -32,6 +32,7 @@ The project follows a structured pipeline:
 3.  **Tactical Profiling (Unsupervised Learning)**:
     *   Applied **K-Means Clustering** to categorize teams into distinct playing styles (e.g. *High Pressing*, *Deep Block*).
     *   Used Silhouette Analysis to determine the optimal number of clusters (K=6).
+    *   Performed clustering dynamically using only prior match data to prevent data leakage.
 
 4.  **Predictive Modeling**:
     *   Developed a weighted 3-component prediction model combining:
